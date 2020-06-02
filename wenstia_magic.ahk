@@ -61,11 +61,15 @@ return
 			While ( toggle == 1 And jump_count < jump_max ) 
 			{
 				flash_jump_attack()
+				jump_count += 1
 			}
+
 			
 			if ( toggle == 0 )
 				break
 			
+			jump_count = 0
+
 			Send, {Left down}
 			Sleep 200
 			Send, {Left up}
@@ -73,11 +77,13 @@ return
 			While ( toggle == 1 And jump_count < jump_max ) 
 			{
 				flash_jump_attack()
+				jump_count += 1
 			}
 
 			if ( toggle == 0 )
 				break
 			
+			jump_count = 0
 			loop_count += 1
 		}
 		
@@ -99,39 +105,39 @@ return
 
 	attack_count = 0
 
-	While { toggle == 1 }
+	While ( toggle == 1 )
 	{
-		Send, { LButton }
+		Send, {LButton}
 		Sleep 2000
 
-		Send, { Enter }
+		Send, {Enter}
 		Sleep 2000
 
-		Send { Down }
+		Send, {Down}
 		Sleep 100
 		
-		Send { Down }
+		Send, {Down}
 		Sleep 100
 		
-		Send { Down }
+		Send, {Down}
 		Sleep 100
 		
-		Send { Enter }
+		Send, {Enter}
 		
 		Sleep 2000
 
 		buff()
 
 		; Set 1
-		Send { Right down }
+		Send, {Right down}
 		Sleep 800
-		Sleep { Right up }
+		Send, {Right up}
 
-		While { toggle == 1 And attack_count < 30000 } 
+		While ( toggle == 1 And attack_count < 30000 )
 		{
-			Send { Z down }
+			Send, {z down}
 			Sleep 1000
-			Send { Z up }
+			Send, {z up}
 			attack_count += 1000
 		}
 
@@ -141,19 +147,19 @@ return
 		attack_count = 0
 
 		; Set 2
-		Send { Left down }
+		Send, {Left down}
 		Sleep 300
-		Send { Left up }
+		Send, {Left up}
 
-		Send { Right down }
+		Send, {Right down}
 		Sleep 500
-		Send { Right up }
+		Send, {Right up}
 
-		While { toggle == 1 And attack_count < 30000 } 
+		While ( toggle == 1 And attack_count < 30000 )
 		{
-			Send { Z down }
+			Send, {z down}
 			Sleep 1000
-			Send { Z up }
+			Send, {z up}
 			attack_count += 1000
 		}
 
@@ -163,19 +169,19 @@ return
 		attack_count = 0
 
 		; Set 3
-		Send { Left down }
+		Send, {Left down}
 		Sleep 300
-		Send { Left up }
+		Send, {Left up}
 
-		Send { Right down }
+		Send, {Right down}
 		Sleep 400
-		Send { Right up }
+		Send, {Right up}
 
-		While { toggle == 1 And attack_count < 30000 } 
+		While ( toggle == 1 And attack_count < 30000 )
 		{
-			Send { Z down }
+			Send, {z down}
 			Sleep 1000
-			Send { Z up }
+			Send, {z up}
 			attack_count += 1000
 		}
 
@@ -185,19 +191,19 @@ return
 		attack_count = 0
 
 		; Set 4
-		Send { Left down }
+		Send, {Left down}
 		Sleep 300
-		Send { Left up }
+		Send, {Left up}
 
-		Send { Right down }
+		Send, {Right down}
 		Sleep 500
-		Send { Right up }
+		Send, {Right up}
 
-		While { toggle == 1 And attack_count < 10000 } 
+		While ( toggle == 1 And attack_count < 10000 ) 
 		{
-			Send { Z down }
+			Send, {z down}
 			Sleep 1000
-			Send { Z up }
+			Send, {z up}
 			attack_count += 1000
 		}
 
@@ -206,7 +212,7 @@ return
 
 		attack_count = 0
 
-		Send { PgDn }
+		Send, {PgDn}
 
 		Sleep 2000
 	}
@@ -223,28 +229,72 @@ return
 !3:
 	While ( toggle == 1 )
 	{
-		Send { Left down }
+		Send, {Left down}
 		Sleep 200
-		Send { Left up }
+		Send, {Left up}
 
 		Sleep 200
 
-		Send, `
+		Send, {`}
 
 		Sleep 5000
 
 		if ( toggle == 0 )
 			break
 
-		Send { Right down }
+		Send, {Right down}
 		Sleep 200
-		Send { Right up }
+		Send, {Right up}
 
 		Sleep 200
 
-		Send, `
+		Send, {`}
 
 		Sleep 5000
+	}
+
+return
+
+/* 
+	HOTKEY: { ALT + 4 }
+
+	FUNCTION: STATIONARY FPOT1
+*/
+!4::
+	attack_count = 0
+
+	While ( toggle == 1 )
+	{ 
+		While ( toggle == 1 And attack_count < 20000)
+		{
+			Send, {x down}
+			Sleep 30
+			attack_count += 30
+		}
+
+		Send, {x up}
+
+		if ( toggle == 0 )
+			break
+
+		attack_count = 0
+
+		Send, {Space}
+		Sleep 800
+
+		Send, {Left down}
+		Sleep 100
+		Send, {Left up}
+
+		Sleep 500
+		Send, x
+		Sleep 500
+
+		Send, {Right down}
+		Sleep 100
+		Send, {Right up}
+
+		Sleep 500
 	}
 
 return
