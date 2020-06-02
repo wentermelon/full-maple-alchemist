@@ -19,15 +19,22 @@ toggle = 1
 
 ^`::
 	if ( toggle )
+	{
 		toggle = 0
+		Send, I
+	}
 	else
+	{
 		toggle = 1
+		Send, I
+	}
+
 return
 
 /*
 	HOTKEY: {CTRL + 1}
 	
-	FUNCTION: "FLAT MAP TRAVEL"
+	FUNCTION: "SWIM"
 		traverses map from left->right using flash_jump_attack()
 		
 		logic exits when toggle == 0
