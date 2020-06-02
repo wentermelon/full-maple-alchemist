@@ -100,6 +100,8 @@ return
 	FUNCTION: "AUTO HELL-DOJO"
 		runs the user through hell Dojo 
 		menu timing can vary if server is lagging
+
+	TODO: FIX AND TEST
 */
 !2:: 
 
@@ -225,6 +227,9 @@ return
 	FUNCTION: "AUTO-GATHERING"
 		harvests nodes on the left and right of the character
 		repeatedly
+
+	TODO: FIX AND TEST
+
 */
 !3:
 	While ( toggle == 1 )
