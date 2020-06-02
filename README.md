@@ -1,4 +1,4 @@
-# wenstia-magic
+# wenstia
 
 Personal farming macros used for KastiaMS written in AutoHotKey.
 
