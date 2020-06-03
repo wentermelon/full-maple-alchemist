@@ -100,7 +100,7 @@ return
 		runs the user through hell Dojo 
 		menu timing can vary if server is lagging
 
-	TODO: FIX AND TEST
+	TODO: FIX AND TEST; I THINK IT NEEDS TO BE LONGER
 */
 !2:: 
 
@@ -378,39 +378,227 @@ return
 	HOTKEY: { ALT + 6 }
 
 	MACRO: AUTO CHAOS DOJO
+
+	TODO: GET TIMING RIGHT FOR BINDING PINK BEAN OR YOU'RE FUCKED
 */
 !6::
 
+	attack_count = 0
+	attack_max = 30000
 
+	While ( toggle == 1 )
+	{
+		Send, {LButton}
+		Sleep 2000
 
+		Send, {Enter}
+		Sleep 2000
 
+		Send, {Down}
+		Sleep 100
+		
+		Send, {Down}
+		Sleep 100
+		
+		Send, {Down}
+		Sleep 100
 
+		Send, {Down}
+		Sleep 100
+		
+		Send, {Enter}
+		
+		Sleep 2000
+
+		buff()
+
+		; Set 1
+		Send, {Right down}
+		Sleep 800
+		Send, {Right up}
+
+		While ( toggle == 1 And attack_count < attack_max )
+		{
+			Send, {z down}
+			Sleep 30
+			attack_count += 30
+		}
+
+		Send, {z up}
+
+		Sleep 500
+
+		if ( toggle == 0 )
+			break
+
+		attack_count = 0
+
+		; Set 2
+		Send, {Left down}
+		Sleep 300
+		Send, {Left up}
+
+		Send, {Right down}
+		Sleep 500
+		Send, {Right up}
+
+		While ( toggle == 1 And attack_count < attack_max )
+		{
+			Send, {z down}
+			Sleep 30
+			attack_count += 30
+		}
+
+		Send, {z up}
+
+		Sleep 500
+
+		if ( toggle == 0 )
+			break
+
+		attack_count = 0
+
+		; Set 3
+		Send, {Left down}
+		Sleep 300
+		Send, {Left up}
+
+		Send, {Right down}
+		Sleep 400
+		Send, {Right up}
+
+		While ( toggle == 1 And attack_count < attack_max )
+		{
+			Send, {z down}
+			Sleep 30
+			attack_count += 30
+		}
+
+		Send, {z up}
+
+		Sleep 500
+
+		if ( toggle == 0 )
+			break
+
+		attack_count = 0
+		
+		; Set 4
+		Send, {Left down}
+		Sleep 300
+		Send, {Left up}
+
+		Send, {Right down}
+		Sleep 500
+		Send, {Right up}
+
+		While ( toggle == 1 And attack_count < attack_max )
+		{
+			Send, {z down}
+			Sleep 30
+			attack_count += 30
+		}
+
+		Send, {z up}
+
+		Sleep 500
+
+		if ( toggle == 0 )
+			break
+
+		attack_count = 0
+
+		; Set 5
+		Send, {Left down}
+		Sleep 300
+		Send, {Left up}
+
+		Send, {Right down}
+		Sleep 500
+		Send, {Right up}
+
+		While ( toggle == 1 And attack_count < attack_max )
+		{
+			Send, {z down}
+			Sleep 30
+			attack_count += 30
+		}
+
+		Send, {z up}
+
+		Sleep 500
+
+		if ( toggle == 0 )
+			break
+
+		attack_count = 0
+
+		Send, E
+		Sleep 1000
+		Send, W
+		Sleep 500
+
+		; Set 6
+		Send, {Left down}
+		Sleep 300
+		Send, {Left up}
+
+		Send, {Right down}
+		Sleep 500
+		Send, {Right up}
+
+		While ( toggle == 1 And attack_count < attack_max )
+		{
+			Send, {z down}
+			Sleep 30
+			attack_count += 30
+		}
+
+		Send, {z up}
+
+		Sleep 500
+
+		if ( toggle == 0 )
+			break
+
+		attack_count = 0
+		
+		Sleep 1000
+
+		Send, {PgDn}
+
+		Sleep 2000
+	}
+
+return
 
 /*
 	FUNCTION: activate buffs on the listed keys
 */
 buff()
 {
+	buff_delay = 1000
+
 	Send, 1
-	Sleep 1000
+	Sleep %buff_delay%
 	
 	Send, 2
-	Sleep 1000
+	Sleep %buff_delay%
 	
 	Send, 3
-	Sleep 1000
+	Sleep %buff_delay%
 	
 	Send, 4
-	Sleep 1000
+	Sleep %buff_delay%
 
 	Send, y
-	Sleep 1000
+	Sleep %buff_delay%
 
 	Send, 5
-	Sleep 1000
+	Sleep %buff_delay%
 
 	Send, t
-	Sleep 1000
+	Sleep %buff_delay%
 
 	return
 }
@@ -438,26 +626,7 @@ flash_jump_attack()
 		return
 }
 
-hold_attack( )
-{
-	While ( toggle == 1 And attack_count < attack_max )
-	{
-		Send {z down}
-		Sleep 30
-		attack_count += 30
-	}
 
-	Send {z up}
-
-	attack_count = 0
-
-	if ( toggle == 0 )
-		return
-
-	Sleep 500
-
-	return
-}
 
 
 	
