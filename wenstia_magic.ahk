@@ -591,6 +591,9 @@ buff()
 	Send, 4
 	Sleep %buff_delay%
 
+	Send, 6
+	Sleep %buff_delay%
+
 	Send, y
 	Sleep %buff_delay%
 
