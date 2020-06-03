@@ -12,7 +12,7 @@ toggle = 0
 /*
 	HOTKEY: { ALT + ` }
 	
-	FUNCTION: "TOGGLE" 
+	MACRO: "TOGGLE" 
 		toggles the "toggle" variable from 0->1 and vice versa for macro scripts below.
 */
 
@@ -33,7 +33,7 @@ return
 /*
 	HOTKEY: { ALT + 1 }
 	
-	FUNCTION: "SWIM"
+	MACRO: "SWIM"
 		traverses map from left->right and right->left using flash_jump_attack()
 */
 
@@ -64,7 +64,6 @@ return
 				jump_count += 1
 			}
 
-			
 			if ( toggle == 0 )
 				break
 			
@@ -97,7 +96,7 @@ return
 
 	HOTKEY: { ALT + 2 }
 
-	FUNCTION: "AUTO HELL-DOJO"
+	MACRO: "AUTO HELL-DOJO"
 		runs the user through hell Dojo 
 		menu timing can vary if server is lagging
 
@@ -106,6 +105,7 @@ return
 !2:: 
 
 	attack_count = 0
+	attack_max = 30000
 
 	While ( toggle == 1 )
 	{
@@ -135,13 +135,16 @@ return
 		Sleep 800
 		Send, {Right up}
 
-		While ( toggle == 1 And attack_count < 30000 )
+		While ( toggle == 1 And attack_count < attack_max )
 		{
 			Send, {z down}
-			Sleep 1000
-			Send, {z up}
-			attack_count += 1000
+			Sleep 30
+			attack_count += 30
 		}
+
+		Send, {z up}
+
+		Sleep 500
 
 		if ( toggle == 0 )
 			break
@@ -157,13 +160,16 @@ return
 		Sleep 500
 		Send, {Right up}
 
-		While ( toggle == 1 And attack_count < 30000 )
+		While ( toggle == 1 And attack_count < attack_max )
 		{
 			Send, {z down}
-			Sleep 1000
-			Send, {z up}
-			attack_count += 1000
+			Sleep 30
+			attack_count += 30
 		}
+
+		Send, {z up}
+
+		Sleep 500
 
 		if ( toggle == 0 )
 			break
@@ -179,40 +185,23 @@ return
 		Sleep 400
 		Send, {Right up}
 
-		While ( toggle == 1 And attack_count < 30000 )
+		While ( toggle == 1 And attack_count < attack_max )
 		{
 			Send, {z down}
-			Sleep 1000
-			Send, {z up}
-			attack_count += 1000
+			Sleep 30
+			attack_count += 30
 		}
 
-		if ( toggle == 0 )
-			break
+		Send, {z up}
 
-		attack_count = 0
-
-		; Set 4
-		Send, {Left down}
-		Sleep 300
-		Send, {Left up}
-
-		Send, {Right down}
 		Sleep 500
-		Send, {Right up}
-
-		While ( toggle == 1 And attack_count < 10000 ) 
-		{
-			Send, {z down}
-			Sleep 1000
-			Send, {z up}
-			attack_count += 1000
-		}
 
 		if ( toggle == 0 )
 			break
 
 		attack_count = 0
+		
+		Sleep 1000
 
 		Send, {PgDn}
 
@@ -224,7 +213,7 @@ return
 /* 
 	HOTKEY: { ALT + 3 }
 
-	FUNCTION: "AUTO-GATHERING"
+	MACRO: "AUTO-GATHERING"
 		harvests nodes on the left and right of the character
 		repeatedly
 
@@ -263,46 +252,139 @@ return
 /* 
 	HOTKEY: { ALT + 4 }
 
-	FUNCTION: STATIONARY FPOT1
+	MACRO: FLAT PLAT LEFT/RIGHT
 */
 !4::
 	attack_count = 0
+	attack_max = 5000
+
+	loop_count = 0
+	loop_max = 5
 
 	While ( toggle == 1 )
-	{ 
-		While ( toggle == 1 And attack_count < 20000)
-		{
-			Send, {x down}
-			Sleep 30
-			attack_count += 30
+	{
+
+		buff()
+
+		While ( toggle == 1 And loop_count < loop_max )
+		{ 
+			Send {Left down}
+			Sleep 200
+			Send {Left up}
+
+			While ( toggle == 1 And attack_count < attack_max )
+			{
+				Send {z down}
+				Sleep 30
+				attack_count += 30
+			}
+
+			Send {z up}
+
+			attack_count = 0
+
+			if ( toggle == 0 )
+				break
+
+			Sleep 500
+
+			Send {Right down}
+			Sleep 200
+			Send {Right up}
+
+			While ( toggle == 1 And attack_count < attack_max )
+			{
+				Send {z down}
+				Sleep 30
+				attack_count += 30
+			}
+
+			Send {z up}
+
+			Sleep 500
+
+			attack_count = 0
+
+			loop_count += 1
 		}
 
-		Send, {x up}
-
-		if ( toggle == 0 )
-			break
-
-		attack_count = 0
-
-		Send, {Space}
-		Sleep 800
-
-		Send, {Left down}
-		Sleep 100
-		Send, {Left up}
-
-		Sleep 500
-		Send, x
-		Sleep 500
-
-		Send, {Right down}
-		Sleep 100
-		Send, {Right up}
-
-		Sleep 500
+		loop_count = 0
 	}
 
 return
+
+/*
+	HOTKEY: { ALT + 5 }
+
+	MACRO: STATIONARY ATTACK
+*/
+!5::
+	attack_count = 0
+	attack_max = 5000
+
+	loop_count = 0
+	loop_max = 5
+
+	While ( toggle == 1 )
+	{
+
+		buff()
+
+		While ( toggle == 1 And loop_count < loop_max )
+		{
+			While ( toggle == 1 And attack_count < attack_max )
+			{
+				Send {x down}
+				Sleep 30
+				attack_count += 30
+			}
+
+			Send {x up}
+
+			attack_count = 0
+
+			if ( toggle == 0 )
+				break
+
+			Sleep 500
+
+			Send {Left down}
+			Sleep 200
+			Send {Left up}
+
+			Sleep 500
+
+			Send {x down}
+			Sleep 200
+			Send {x up}
+
+			Sleep 500
+
+			Send {Right down}
+			Sleep 200
+			Send {Right up}
+
+			Sleep 500
+
+			loop_count += 1
+		}
+
+		loop_count = 0
+	}
+
+return
+
+/* 
+	HOTKEY: { ALT + 6 }
+
+	MACRO: AUTO CHAOS DOJO
+*/
+!6::
+
+
+
+
+
 
 /*
 	FUNCTION: activate buffs on the listed keys
@@ -320,6 +402,17 @@ buff()
 	
 	Send, 4
 	Sleep 1000
+
+	Send, y
+	Sleep 1000
+
+	Send, 5
+	Sleep 1000
+
+	Send, t
+	Sleep 1000
+
+	return
 }
 
 /*
@@ -341,6 +434,29 @@ flash_jump_attack()
 		Sleep 84
 		Send, {z up}
 		Sleep 750
+
+		return
+}
+
+hold_attack( )
+{
+	While ( toggle == 1 And attack_count < attack_max )
+	{
+		Send {z down}
+		Sleep 30
+		attack_count += 30
+	}
+
+	Send {z up}
+
+	attack_count = 0
+
+	if ( toggle == 0 )
+		return
+
+	Sleep 500
+
+	return
 }
 
 
