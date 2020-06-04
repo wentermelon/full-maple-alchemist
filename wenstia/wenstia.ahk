@@ -163,9 +163,9 @@ return
 	MACRO: STATIONARY ATTACK
 
 */
-!3:
+!3::
 	attack_count = 0
-	attack_max = 5000
+	attack_max = 10000
 
 	loop_count = 0
 	loop_max = 5
@@ -194,22 +194,25 @@ return
 			Sleep 500
 
 			Send {Left down}
-			Sleep 200
+			Sleep 80
 			Send {Left up}
 
 			Sleep 500
 
-			Send {x down}
-			Sleep 200
+			Loop 10 {
+				Send {x down}
+				Sleep 100
+			}
+
 			Send {x up}
 
 			Sleep 500
 
 			Send {Right down}
-			Sleep 200
+			Sleep 80
 			Send {Right up}
 
-			Sleep 500
+			Sleep 100
 
 			loop_count += 1
 		}
@@ -222,7 +225,7 @@ return
 /* 
 	HOTKEY: { ALT + 4 }
 
-
+	MACRO: NONE
 */
 !4::
 return
@@ -230,9 +233,32 @@ return
 /*
 	HOTKEY: { ALT + 5 }
 
-	MACRO: STATIONARY ATTACK
+	MACRO: AUTO GATHERING
 */
 !5::
+
+	While ( toggle == 1 )
+	{
+		Send, ``
+		Sleep 5000
+
+		Send, {Left down}
+		Sleep 200
+		Send, {Left up}
+		Sleep 200
+
+		if ( toggle == 0 )
+			break
+
+		Send, ``
+		Sleep 5000
+
+		Send, {Right down}
+		Sleep 200
+		Send, {Right up}
+		Sleep 200
+	}
+
 return
 
 /* 
