@@ -256,7 +256,7 @@ return
 */
 !4::
 	attack_count = 0
-	attack_max = 5000
+	attack_max = 8000
 
 	loop_count = 0
 	loop_max = 5
@@ -594,14 +594,14 @@ buff()
 	Send, 6
 	Sleep %buff_delay%
 
-	Send, y
-	Sleep %buff_delay%
+	;Send, y
+	;Sleep %buff_delay%
 
-	Send, 5
-	Sleep %buff_delay%
+	;Send, 5
+	;Sleep %buff_delay%
 
-	Send, t
-	Sleep %buff_delay%
+	;Send, t
+	;Sleep %buff_delay%
 
 	return
 }
