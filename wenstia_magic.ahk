@@ -482,7 +482,7 @@ return
 			break
 
 		attack_count = 0
-		
+
 		; Set 4
 		Send, {Left down}
 		Sleep 300
@@ -517,7 +517,7 @@ return
 		Sleep 500
 		Send, {Right up}
 
-		While ( toggle == 1 And attack_count < attack_max )
+		While ( toggle == 1 And attack_count < 20000 )
 		{
 			Send, {z down}
 			Sleep 30
@@ -528,26 +528,17 @@ return
 
 		Sleep 500
 
+		Send, e
+		Sleep 1000
+		Send, w
+		Sleep 500
+
 		if ( toggle == 0 )
 			break
 
 		attack_count = 0
 
-		Send, E
-		Sleep 1000
-		Send, W
-		Sleep 500
-
-		; Set 6
-		Send, {Left down}
-		Sleep 300
-		Send, {Left up}
-
-		Send, {Right down}
-		Sleep 500
-		Send, {Right up}
-
-		While ( toggle == 1 And attack_count < attack_max )
+		While ( toggle == 1 And attack_count < 10000 )
 		{
 			Send, {z down}
 			Sleep 30
@@ -563,6 +554,10 @@ return
 
 		attack_count = 0
 		
+		Sleep 1000
+
+		Send, {Space}
+
 		Sleep 1000
 
 		Send, {PgDn}
