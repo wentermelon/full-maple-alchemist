@@ -96,165 +96,9 @@ return
 
 	HOTKEY: { ALT + 2 }
 
-	MACRO: "AUTO HELL-DOJO"
-		runs the user through hell Dojo 
-		menu timing can vary if server is lagging
-
-	TODO: FIX AND TEST; I THINK IT NEEDS TO BE LONGER
-*/
-!2:: 
-
-	attack_count = 0
-	attack_max = 30000
-
-	While ( toggle == 1 )
-	{
-		Send, {LButton}
-		Sleep 2000
-
-		Send, {Enter}
-		Sleep 2000
-
-		Send, {Down}
-		Sleep 100
-		
-		Send, {Down}
-		Sleep 100
-		
-		Send, {Down}
-		Sleep 100
-		
-		Send, {Enter}
-		
-		Sleep 2000
-
-		buff()
-
-		; Set 1
-		Send, {Right down}
-		Sleep 800
-		Send, {Right up}
-
-		While ( toggle == 1 And attack_count < attack_max )
-		{
-			Send, {z down}
-			Sleep 30
-			attack_count += 30
-		}
-
-		Send, {z up}
-
-		Sleep 500
-
-		if ( toggle == 0 )
-			break
-
-		attack_count = 0
-
-		; Set 2
-		Send, {Left down}
-		Sleep 300
-		Send, {Left up}
-
-		Send, {Right down}
-		Sleep 500
-		Send, {Right up}
-
-		While ( toggle == 1 And attack_count < attack_max )
-		{
-			Send, {z down}
-			Sleep 30
-			attack_count += 30
-		}
-
-		Send, {z up}
-
-		Sleep 500
-
-		if ( toggle == 0 )
-			break
-
-		attack_count = 0
-
-		; Set 3
-		Send, {Left down}
-		Sleep 300
-		Send, {Left up}
-
-		Send, {Right down}
-		Sleep 400
-		Send, {Right up}
-
-		While ( toggle == 1 And attack_count < attack_max )
-		{
-			Send, {z down}
-			Sleep 30
-			attack_count += 30
-		}
-
-		Send, {z up}
-
-		Sleep 500
-
-		if ( toggle == 0 )
-			break
-
-		attack_count = 0
-		
-		Sleep 1000
-
-		Send, {PgDn}
-
-		Sleep 2000
-	}
-
-return
-
-/* 
-	HOTKEY: { ALT + 3 }
-
-	MACRO: "AUTO-GATHERING"
-		harvests nodes on the left and right of the character
-		repeatedly
-
-	TODO: FIX AND TEST
-
-*/
-!3:
-	While ( toggle == 1 )
-	{
-		Send, {Left down}
-		Sleep 200
-		Send, {Left up}
-
-		Sleep 200
-
-		Send, {`}
-
-		Sleep 5000
-
-		if ( toggle == 0 )
-			break
-
-		Send, {Right down}
-		Sleep 200
-		Send, {Right up}
-
-		Sleep 200
-
-		Send, {`}
-
-		Sleep 5000
-	}
-
-return
-
-/* 
-	HOTKEY: { ALT + 4 }
-
 	MACRO: FLAT PLAT LEFT/RIGHT
 */
-!4::
+!2:: 
 	attack_count = 0
 	attack_max = 8000
 
@@ -313,12 +157,13 @@ return
 
 return
 
-/*
-	HOTKEY: { ALT + 5 }
+/* 
+	HOTKEY: { ALT + 3 }
 
 	MACRO: STATIONARY ATTACK
+
 */
-!5::
+!3:
 	attack_count = 0
 	attack_max = 5000
 
@@ -375,11 +220,25 @@ return
 return
 
 /* 
+	HOTKEY: { ALT + 4 }
+
+
+*/
+!4::
+return
+
+/*
+	HOTKEY: { ALT + 5 }
+
+	MACRO: STATIONARY ATTACK
+*/
+!5::
+return
+
+/* 
 	HOTKEY: { ALT + 6 }
 
 	MACRO: AUTO CHAOS DOJO
-
-	TODO: GET TIMING RIGHT FOR BINDING PINK BEAN OR YOU'RE FUCKED
 */
 !6::
 
