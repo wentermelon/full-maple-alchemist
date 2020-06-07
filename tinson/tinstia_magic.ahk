@@ -314,7 +314,7 @@ F6::
 	
 /*		
 	HOTKEY: F5
-	FUNCTION: "Stasis Farm"
+	FUNCTION: "Stasis Farm", "No Movement"
 	MAP: Forgotten Path of Time <1>
 	FLOW:
 	
