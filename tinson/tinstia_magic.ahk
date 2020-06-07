@@ -28,9 +28,8 @@ F11::
 
 /*
 	HOTKEY: F12
-	CATEGORY: "Fast Farm" 
-	MAP: Any
-	GENERAL STATEMENT: Used when equipping skill cooldown reduction equipment to reduce the cooldown of Dark Genesis to a minimum. This farming method focuses on spamming both Dark Genesis and Sweeping Staff as often as possible.
+	CATEGORY: "Fast Farm", "No Movement"
+	MAP: The Nest of a Dead Dragon, Lachelein Ballroom, Lachelein Clocktower
 	FLOW:
 	
 		1. Use Dark Genesis
@@ -44,14 +43,14 @@ F12::
 	{
 		Send, T
 		Sleep 1500
-		position_left(3000)
+		position_left(1000)
 		
 		if ( toggle == 0)
 			break
 				
 		Send, A
 		Sleep 1500
-		position_right(2000)
+		position_right(2500)
 		
 		if ( toggle == 0)
 			break
@@ -63,7 +62,6 @@ F12::
 	HOTKEY: F7
 	CATEGORY: "Stasis Farm", "Swimming"
 	MAP: Inside the Stone Colossus 2
-	GENERAL STATEMENT: Used with standard equipment along with Mark of Stasis to increase the effectiveness of the Mark of Stasis. This farming method utilizes additional skill inputs to buy time for the lengthier Dark Genesis cooldown.
 	ADDITIONAL COMMENTS: Marked for refactoring - improve logic to replace redundant break conditions.
 	FLOW:
 	
@@ -71,7 +69,6 @@ F12::
 		2. Battle Burst, TP, Finishing Blow
 		3. Hold Right
 		4. Battle Burst, TP, Finishing Blow
-
 */
 
 F7::
@@ -125,9 +122,8 @@ F7::
 	
 /*
 	HOTKEY: 'Minus' sign
-	CATEGORY: "Stasis Farm"
+	CATEGORY: "Stasis Farm", "No Movement"
 	MAP: Nest of a Dead Dragon
-	GENERAL STATEMENT: Used with standard equipment along with Mark of Stasis to increase the effectiveness of the Mark of Stasis. This farming method utilizes additional skill inputs to buy time for the lengthier Dark Genesis cooldown.
 	FLOW:
 	
 		1. Use Dark Genesis
@@ -196,9 +192,8 @@ F7::
 
 /*		
 	HOTKEY: Numpad5
-	CATEGORY: "Stasis Farm"
+	CATEGORY: "Stasis Farm", "Climbing"
 	MAP: Warped Path of Time <2>
-	GENERAL STATEMENT: Used with standard equipment along with Mark of Stasis to increase the effectiveness of the Mark of Stasis. This farming method utilizes additional skill inputs to buy time for the lengthier Dark Genesis cooldown.
 	ADDITIONAL COMMENTS: Marked for refactoring - improve logic to replace redundant break conditions.
 	FLOW:
 	
@@ -208,7 +203,6 @@ F7::
 		4. Dark Genesis
 		5. Sweeping Staff
 		6. Teleport down
-
 */
 
 Numpad5::
@@ -264,17 +258,17 @@ Numpad5::
 /*		
 	HOTKEY: F6
 	CATEGORY: "Stasis Farm", "Climbing"
-	MAP: Slurpy Forest Depths
-	GENERAL STATEMENT: Used with standard equipment along with Mark of Stasis to increase the effectiveness of the Mark of Stasis. This farming method utilizes additional skill inputs to buy time for the lengthier Dark Genesis cooldown.
+	MAP: Slurpy Forest Depths, Lachelein Ballroom 3
 	FLOW:
 	
 		1. Chain into 3 Finishing Blows
-		2. Rope lift
-		3. Chain into 3 Finishing Blows
-		4. Dark Genesis
-		5. Sweeping Staff
-		6. Teleport down
-
+		2. Teleport up
+		3. Chain
+		4. Sweeping Staff
+		5. Teleport down
+		6. Chain into 3 Finishing Blows
+		7. Teleport down
+		8. Dark Genesis
 */	
 
 F6::
@@ -322,14 +316,12 @@ F6::
 	HOTKEY: F5
 	FUNCTION: "Stasis Farm"
 	MAP: Forgotten Path of Time <1>
-	GENERAL STATEMENT: Used with standard equipment along with Mark of Stasis to increase the effectiveness of the Mark of Stasis. This farming method utilizes additional skill inputs to buy time for the lengthier Dark Genesis cooldown.
 	FLOW:
 	
 		1. Facing left, Chain 
 		2. Finishing Sweep
 		3. Facing right, Chain
 		4. Finishing Sweep
-
 */	
 
 F5::
