@@ -50,7 +50,7 @@ return
 	While ( toggle == 1 )
 	{
 	
-		buff()
+		;buff()
 		
 		While ( toggle == 1 And loop_count < loop_max ) 
 		{
@@ -249,14 +249,14 @@ return
 !4::
 
 	attack_count = 0
-	attack_max = 5
+	attack_max = 15
 
 	while ( toggle == 1 )
 	{
 		while ( toggle == 1 And attack_count < attack_max )
 		{
 			Send {Space}
-			Sleep 80
+			Sleep 90
 			Send {z}
 			Sleep 700
 			attack_count += 1
@@ -267,10 +267,10 @@ return
 
 		attack_count = 0
 		
-		Sleep 500
+		Sleep 1000
 
 		Send {Right down}
-		Sleep 700
+		Sleep 500
 		Send {Right up}
 		
 		Sleep 500
@@ -279,10 +279,12 @@ return
 		Sleep 200
 		Send {Left up}
 
+		Sleep 500
+
 		while ( toggle == 1 And attack_count < attack_max )
 		{
 			Send {Space}
-			Sleep 80
+			Sleep 90
 			Send {z}
 			attack_count += 1
 			Sleep 700
@@ -293,7 +295,7 @@ return
 
 		attack_count = 0
 
-		Sleep 500
+		Sleep 1000
 
 		Send {Left down}
 		Sleep 500
