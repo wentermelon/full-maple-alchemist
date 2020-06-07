@@ -1,8 +1,38 @@
 # Changelog
 
-## 1.0.0 - [ 30.06.2020 ]
-### General
-#### Added
+## 1.0.1 - [07.06.2020 ]
+### Added 
+- New purpose tags 
+  - "No Movement" 
+- New maps
+  - Lachelein Ballroom (entire region)
+  - Lachelein Ballroom 3
+  - Lachelein Clocktower (entire region)
+
+### Changed
+- Some scripts have been given new tags and new maps:
+  - F12 script
+    - + "No Movement" tag
+    - + Nest of a Dead Dragon
+    - + Lachelein Ballroom
+    - + Lachelein Clocktower
+  - 'Minus' sign script
+    - + "No Movement" tag
+  - Numpad5 script
+    - + "Climbing" tag
+  - F6 script
+    - + Lachelein Ballroom 3
+  - F5 script
+    - + "No Movement" tag
+  
+### Removed
+- Some comments in the .ahk file itself were removed 
+  - Specifically, the "GENERAL STATEMENT: ..." that was found in the comments preceding each script
+  
+---
+
+## 1.0.0 - [ 30.05.2020 ]
+### Added
 - Initial commit to GitHub.
   - 'tinstia_magic.ahk' 
     - Includes magic for the following purposes/maps:
