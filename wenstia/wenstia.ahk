@@ -118,6 +118,71 @@ return
 
 			While ( toggle == 1 And attack_count < attack_max )
 			{
+				Send {x down}
+				Sleep 30
+				attack_count += 30
+			}
+
+			Send {x up}
+
+			attack_count = 0
+
+			if ( toggle == 0 )
+				break
+
+			Sleep 500
+
+			Send {Right down}
+			Sleep 200
+			Send {Right up}
+
+			While ( toggle == 1 And attack_count < attack_max )
+			{
+				Send {x down}
+				Sleep 30
+				attack_count += 30
+			}
+
+			Send {x up}
+
+			Sleep 500
+
+			attack_count = 0
+
+			loop_count += 1
+		}
+
+		loop_count = 0
+	}
+
+return
+
+/* 
+	HOTKEY: { ALT + 3 }
+
+	MACRO: FPOT TOP LEFT
+
+*/
+!3::
+	attack_count = 0
+	attack_max = 5000
+
+	loop_count = 0
+	loop_max = 5
+
+	While ( toggle == 1 )
+	{
+
+		;buff()
+
+		While ( toggle == 1 And loop_count < loop_max )
+		{ 
+			Send {Left down}
+			Sleep 200
+			Send {Left up}
+
+			While ( toggle == 1 And attack_count < attack_max )
+			{
 				Send {z down}
 				Sleep 30
 				attack_count += 30
@@ -158,90 +223,6 @@ return
 return
 
 /* 
-	HOTKEY: { ALT + 3 }
-
-	MACRO: FPOT TOP LEFT
-
-*/
-!3::
-	attack_count = 0
-	attack_max = 10000
-
-	loop_count = 0
-	loop_max = 5
-
-	While ( toggle == 1 )
-	{
-
-		;buff()
-
-		While ( toggle == 1 And loop_count < loop_max )
-		{
-			While ( toggle == 1 And attack_count < attack_max )
-			{
-				Send {x down}
-				Sleep 30
-				attack_count += 30
-			}
-
-			Send {x up}
-
-			attack_count = 0
-
-			if ( toggle == 0 )
-				break
-
-			Sleep 500
-
-			Send {Right down}
-			Sleep 800
-			Send {Right up}
-
-			Sleep 500
-
-			Send {Left down}		
-			Sleep 100
-			Send {Left up}
-
-			Sleep 500
-
-			While ( toggle == 1 And attack_count < attack_max )
-			{
-				Send {x down}
-				Sleep 30
-				attack_count += 30
-			}
-
-			Send {x up}
-
-			if ( toggle == 0 )
-				break	
-
-			attack_count = 0
-
-			Send {Left down}
-			Sleep 800
-			Send {Left up}
-
-			Sleep 500
-
-			Send {Right down}		
-			Sleep 100
-			Send {Right up}
-
-			Sleep 500
-
-
-
-			loop_count += 1
-		}
-
-		loop_count = 0
-	}
-
-return
-
-/* 
 	HOTKEY: { ALT + 4 }
 
 	MACRO: JUMP ATTACK SIDE-TO-SIDE
@@ -257,7 +238,7 @@ return
 		{
 			Send {Space}
 			Sleep 90
-			Send {z}
+			Send {x}
 			Sleep 700
 			attack_count += 1
 		}
@@ -267,25 +248,19 @@ return
 
 		attack_count = 0
 		
-		Sleep 1000
+		Sleep 800
 
 		Send {Right down}
-		Sleep 500
+		Sleep 200
 		Send {Right up}
 		
-		Sleep 500
-
-		Send {Left down}
-		Sleep 200
-		Send {Left up}
-
 		Sleep 500
 
 		while ( toggle == 1 And attack_count < attack_max )
 		{
 			Send {Space}
 			Sleep 90
-			Send {z}
+			Send {x}
 			attack_count += 1
 			Sleep 700
 		}
@@ -295,17 +270,13 @@ return
 
 		attack_count = 0
 
-		Sleep 1000
+		Sleep 800
 
 		Send {Left down}
-		Sleep 500
+		Sleep 200
 		Send {Left up}
 		
 		Sleep 500
-
-		Send {Right down}
-		Sleep 200
-		Send {Right up}
 	}
 
 return
@@ -323,9 +294,9 @@ return
 		Sleep 5000
 
 		Send, {Left down}
-		Sleep 200
+		Sleep 150
 		Send, {Left up}
-		Sleep 200
+		Sleep 150
 
 		if ( toggle == 0 )
 			break
@@ -334,9 +305,9 @@ return
 		Sleep 5000
 
 		Send, {Right down}
-		Sleep 200
+		Sleep 150
 		Send, {Right up}
-		Sleep 200
+		Sleep 150
 	}
 
 return
@@ -373,9 +344,9 @@ return
 		
 		Send, {Enter}
 		
-		Sleep 2000
+		Sleep 5000
 
-		buff()
+		;buff()
 
 		; Set 1
 		Send, {Right down}
@@ -384,12 +355,12 @@ return
 
 		While ( toggle == 1 And attack_count < attack_max )
 		{
-			Send, {z down}
+			Send, {x down}
 			Sleep 30
 			attack_count += 30
 		}
 
-		Send, {z up}
+		Send, {x up}
 
 		Sleep 500
 
@@ -409,12 +380,12 @@ return
 
 		While ( toggle == 1 And attack_count < attack_max )
 		{
-			Send, {z down}
+			Send, {x down}
 			Sleep 30
 			attack_count += 30
 		}
 
-		Send, {z up}
+		Send, {x up}
 
 		Sleep 500
 
@@ -434,12 +405,12 @@ return
 
 		While ( toggle == 1 And attack_count < attack_max )
 		{
-			Send, {z down}
+			Send, {x down}
 			Sleep 30
 			attack_count += 30
 		}
 
-		Send, {z up}
+		Send, {x up}
 
 		Sleep 500
 
@@ -459,12 +430,12 @@ return
 
 		While ( toggle == 1 And attack_count < attack_max )
 		{
-			Send, {z down}
+			Send, {x down}
 			Sleep 30
 			attack_count += 30
 		}
 
-		Send, {z up}
+		Send, {x up}
 
 		Sleep 500
 
@@ -484,12 +455,12 @@ return
 
 		While ( toggle == 1 And attack_count < 16000 )
 		{
-			Send, {z down}
+			Send, {x down}
 			Sleep 30
 			attack_count += 30
 		}
 
-		Send, {z up}
+		Send, {x up}
 
 		Sleep 500
 
@@ -505,12 +476,12 @@ return
 
 		While ( toggle == 1 And attack_count < 10000 )
 		{
-			Send, {z down}
+			Send, {x down}
 			Sleep 30
 			attack_count += 30
 		}
 
-		Send, {z up}
+		Send, {x up}
 
 		Sleep 500
 
@@ -578,15 +549,22 @@ flash_jump_attack()
 		
 		Send, {Space down}
 		Sleep 45
-		Send, {z down}
+		Send, {x down}
 		Sleep 2
 		Send, {Space up}
 		
 		Sleep 84
-		Send, {z up}
+		Send, {x up}
 		Sleep 750
 
 		return
+}
+
+/*
+*/
+hold_down_attack( toggle )
+{
+
 }
 
 
