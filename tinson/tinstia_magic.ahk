@@ -50,7 +50,7 @@ F12::
 				
 		Send, A
 		Sleep 1500
-		position_right(2500)
+		position_right(3500)
 		
 		if ( toggle == 0)
 			break
@@ -209,13 +209,16 @@ Numpad5::
 
 	While (toggle == 1)
 	{
+		Send, T
+		Sleep 2000
+	
 		if (toggle == 0)
 		{
 			break
 		}
 
 		chain_neutral(1000)
-		scythe_neutral(300)
+		scythe_neutral(750)
 		
 		if (toggle == 0)
 		{
@@ -227,16 +230,8 @@ Numpad5::
 		Sleep 2000
 		
 		chain_neutral(1000)
-		scythe_neutral(300)
+		scythe_neutral(750)
 		Sleep 1000
-		
-		if (toggle == 0)
-			break
-		
-		Send, T
-		Sleep 2000
-		Send, A
-		Sleep 2000
 		
 		if (toggle == 0)
 		{
@@ -245,6 +240,8 @@ Numpad5::
 		
 		teleport_down()
 		Sleep 500
+		Send, A
+		Sleep 2000
 		
 		if (toggle == 0)
 		{
@@ -331,6 +328,12 @@ F5::
 		position_left(100)
 		chain_neutral(1000)
 		finishing_sweep()
+		Send, {V down}
+		Sleep 300
+		Send, {V up}
+		Send, {V down}
+		Sleep 300
+		Send, {V up}
 		
 		if (toggle == 0)
 		{
@@ -341,6 +344,11 @@ F5::
 		position_right(100)
 		chain_neutral(1000)
 		finishing_sweep()
+		Sleep 300
+		Send, {V up}
+		Send, {V down}
+		Sleep 300
+		Send, {V up}
 		
 		if (toggle == 0)
 		{
@@ -348,6 +356,101 @@ F5::
 		}
 	}
 	return
+	
+/*		
+	HOTKEY: F4
+	FUNCTION: "Timed Movement", "Swimming"
+	MAP: Monster Park Extreme Forbidden Time
+	FLOW:
+	
+		1. Wait 5 seconds
+		2. Walk left, jump, rope-lift onto upper platform
+		3. Repeat the nested loop 18 times
+*/	
+	
+F4::
+	While (toggle == 1)
+	{
+		Sleep 5000
+		Send, {Left down}
+		Sleep 3750
+		Send, {Left up}
+		Send, {CTRL down}
+		Sleep 100
+		Send, X
+		Send, {CTRL up}
+		Sleep 3500
+		
+		Loop, 18
+		{
+			Loop, 3
+			{
+				burst_left(50)
+				scythe_left(50)
+			}
+	
+			Loop, 3
+			{
+				burst_right(50)
+				scythe_right(50)
+			}
+
+		}
+		
+	}
+	
+	
+/* 
+	HOTKEY: F1
+	EXPLANATION: Immediate exit from AHK
+*/
+
+F1::
+ExitApp
+
+/*
+	EXPERIMENTAL FUNCTION
+	HOTKEY: F3
+	FUNCTION REFERENCE: ControlSend,, {Key}, {Window}
+	PROBLEM: We need to find a way to reference the Kastia window, even when it is not active
+	
+	CURRENT PROGRESS: We can reference Kastia through the following:
+	
+	ahk_class MapleStoryClass
+	ahk_pid [PROCESS ID (from Task Manager)]
+	ahk_exe MapleStory.exe
+	
+	
+	
+*/
+
+F3::
+SetTitleMatchMode, 2 ; This sets it so that the windows title can contain WinTitle anywhere inside it to be a match
+
+if WinExist("ahk_exe kastia.exe")
+{
+	/*
+	Run notepad.exe
+	Sleep 500
+	ControlSend,, {h}, Notepad
+	ControlSend,, {e}, Notepad
+	ControlSend,, {l}, Notepad
+	ControlSend,, {l}, Notepad
+	ControlSend,, {o}, Notepad
+	ControlSend,, {Enter}, Notepad
+	ControlSend,, {w}, Notepad
+	ControlSend,, {o}, Notepad
+	ControlSend,, {r}, Notepad
+	ControlSend,, {l}, Notepad
+	ControlSend,, {d}, Notepad
+	*/
+	
+	ControlSend,, {Ctrl}, Maple Story
+	Sleep 500
+	ControlSend,, {Ctrl}, ahk_exe MapleStory.exe
+
+}
+return
 
 ; ***** FUNCTIONS ***** 
 	
@@ -480,11 +583,27 @@ swimming_loop_right()
 	Sleep 750
 	Send, {Right up}
 	Send, {+ up}	
-	burst_neutral(500)
+	burst_neutral(750)
 	Send, {V down}
-	Sleep 100
+	Sleep 300
 	Send, {V up}
-	Sleep 100
+	Sleep 300
+	Send, {V down}
+	Sleep 300
+	Send, {V up}
+	Sleep 300
+	Send, {V down}
+	Sleep 300
+	Send, {V up}
+	Sleep 300
+	Send, {V down}
+	Sleep 300
+	Send, {V up}
+	Sleep 300
+	Send, {V down}
+	Sleep 500
+	Send, {V up}
+	Sleep 300
 }
 
 swimming_loop_left()
@@ -495,11 +614,27 @@ swimming_loop_left()
 	Sleep 750
 	Send, {Left up}
 	Send, {+ up}	
-	burst_neutral(500)
+	burst_neutral(750)
 	Send, {V down}
-	Sleep 100
+	Sleep 300
 	Send, {V up}
-	Sleep 100
+	Sleep 300
+	Send, {V down}
+	Sleep 300
+	Send, {V up}
+	Sleep 300
+	Send, {V down}
+	Sleep 300
+	Send, {V up}
+	Sleep 300
+	Send, {V down}
+	Sleep 300
+	Send, {V up}
+	Sleep 300
+	Send, {V down}
+	Sleep 500
+	Send, {V up}
+	Sleep 300
 }
 
 ; NTS: Refactor this function....
