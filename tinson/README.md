@@ -14,6 +14,8 @@
   - "Timed Movement"
 - New map
   - Monster Park Extreme Forbidden Time
+- New file on repo
+  - purpose_tags.md 
   
  ### Changed
  - Updated some scripts
@@ -24,7 +26,7 @@
  - swimming_loop_left() and swimming_loop_right() functions number of attacks increased to better handle stronger monsters
  - In some scripts, changed values of various delay buffers to better handle server-related lag issues. Affected scripts:
    - F12 script
-   - Numpad5 
+   - Numpad5 script
    
  ### Removed
  - Purpose tag breakdown section from README moved to its own file
