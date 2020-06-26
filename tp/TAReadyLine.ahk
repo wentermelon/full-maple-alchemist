@@ -3,8 +3,6 @@
 ; Have the items you want to make TA ready across the top line of your inventory and nothing else there, have your hammers in the 4th slot of the top row of your cash inventory
 ; Open the cash tab of your inventory and then press Ctrl+J and it should work. Sometimes it's glitchy and only scrolls 9 times, hammers once, or star forces once so sorry idk why it does that
 
-SendMode Input
-
 ^j::
 CoordMode, Mouse, Window
 Count = 10
