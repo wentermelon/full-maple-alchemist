@@ -113,7 +113,7 @@ return
 		While ( toggle == 1 And loop_count < loop_max )
 		{ 
 			Send {Left down}
-			Sleep 100
+			Sleep 150
 			Send {Left up}
 
 			While ( toggle == 1 And attack_count < attack_max )
@@ -133,7 +133,7 @@ return
 			Sleep 500
 
 			Send {Right down}
-			Sleep 100
+			Sleep 150
 			Send {Right up}
 
 			While ( toggle == 1 And attack_count < attack_max )
