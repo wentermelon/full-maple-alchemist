@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0 - [ 29.07.2020 ]
+### Changed
+- [ALT+3] hotkey now performs the same macro as [ALT+2] but using the Z key instead.
+
+### Removed
+- Removed 'buffs()' from macros
+
 ## 1.2.1 - [ 12.06.2020 ]
 ### Changed
 - buffs() disabled from macros. Obtained a buff crystal which allows for 1-hour-long duration for buffs so no need to cast it so frequently.

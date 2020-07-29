@@ -96,7 +96,7 @@ return
 
 	HOTKEY: { ALT + 2 }
 
-	MACRO: FLAT PLAT LEFT/RIGHT
+	MACRO: FLAT PLAT LEFT/RIGHT USING X KEY
 */
 !2:: 
 	attack_count = 0
@@ -107,8 +107,6 @@ return
 
 	While ( toggle == 1 )
 	{
-
-		;buff()
 
 		While ( toggle == 1 And loop_count < loop_max )
 		{ 
@@ -157,13 +155,13 @@ return
 
 return
 
-/* 
+/*
+
 	HOTKEY: { ALT + 3 }
 
-	MACRO: FPOT TOP LEFT
-
+	MACRO: FLAT PLAT LEFT/RIGHT USING Z KEY
 */
-!3::
+!2:: 
 	attack_count = 0
 	attack_max = 5000
 
@@ -173,12 +171,10 @@ return
 	While ( toggle == 1 )
 	{
 
-		;buff()
-
 		While ( toggle == 1 And loop_count < loop_max )
 		{ 
 			Send {Left down}
-			Sleep 200
+			Sleep 150
 			Send {Left up}
 
 			While ( toggle == 1 And attack_count < attack_max )
@@ -198,7 +194,7 @@ return
 			Sleep 500
 
 			Send {Right down}
-			Sleep 200
+			Sleep 150
 			Send {Right up}
 
 			While ( toggle == 1 And attack_count < attack_max )
@@ -560,12 +556,6 @@ flash_jump_attack()
 		return
 }
 
-/*
-*/
-hold_down_attack( toggle )
-{
-
-}
 
 
 
