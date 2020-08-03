@@ -161,7 +161,7 @@ return
 
 	MACRO: FLAT PLAT LEFT/RIGHT USING Z KEY
 */
-!2:: 
+!3:: 
 	attack_count = 0
 	attack_max = 5000
 
