@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.0 - [ 13.09.2020 ]
+Kastia was shut down so this will be the last commit to the repository. 
+
 ## 1.3.0 - [ 29.07.2020 ]
 ### Changed
 - [ALT+3] hotkey now performs the same macro as [ALT+2] but using the Z key instead.
